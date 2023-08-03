@@ -172,12 +172,12 @@ class I2cDecoder:
         if self.sampled_df is None:
             raise SyntaxError("Cannot plot before calling `decode`!")
 
-        fig = plt.figure(dpi=150, figsize=(100,6))
+        fig = plt.figure(dpi=150, figsize=(100,4))
 
         columns = self.sampled_df.columns[:3]
         time, ch1, ch2 = columns
 
-        plt.plot(self.sampled_df[time], self.sampled_df[ch1], label="SLD");
+        plt.plot(self.sampled_df[time], self.sampled_df[ch1], label="SDA");
         plt.plot(self.sampled_df[time], self.sampled_df[ch2], label="SCL");
 
         plt.legend()
